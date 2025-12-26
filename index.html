@@ -75,10 +75,7 @@
     try {
       const handle = await window.showSaveFilePicker({
         suggestedName: (document.title === 'Textarea' ? 'untitled' : document.title) + '.txt',
-        types: [{
-          description: 'Text File',
-          accept: {'text/plain': ['.txt']},
-        }],
+        types: [{description: 'Text File', accept: {'text/plain': ['.txt']}}],
       })
       const writable = await handle.createWritable()
       await writable.write(article.textContent)
